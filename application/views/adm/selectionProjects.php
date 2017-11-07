@@ -42,14 +42,14 @@
             attemptSubmit: false
         },
         mounted() {
-            this.$http.get('http://localhost:3000/projects').then(response => {
+            this.$http.get('http://localhost:3000/clients/projects').then(response => {
                 if(response.body.status == 200)
                     this.projects = response.body.projects;
             });
         },
         methods: {
             redirect: function(id){
-                window.location = '<?php print site_url('/projects/view/')?>'+id;
+                window.location = '<?php print site_url('/selection/myEvent/')?>'+id;
             },
             salvar: function(){
                 this.attemptSubmit = true;
